@@ -1,6 +1,6 @@
 #1022038010.py
-from flask import Flask, request, jsonify, render_template # type: ignore
-import requests # type: ignore
+from flask import Flask, request, jsonify, render_template
+import requests 
 import os
 import smtplib
 import logging
@@ -11,21 +11,17 @@ from email.mime.application import MIMEApplication
 import mimetypes
 import zipfile
 import io
-from dotenv import load_dotenv # type: ignore
+from dotenv import load_dotenv 
 
-# Load environment variables
 load_dotenv()
 
 app = Flask(__name__, template_folder='../templates')
 
-# Set up logging
 logging.basicConfig(level=logging.DEBUG)
 
-# Google Custom Search API configuration
 API_KEY = os.getenv('GOOGLE_API_KEY')
 CX = os.getenv('GOOGLE_CX')
 
-# Email configuration
 SMTP_SERVER = os.getenv('SMTP_SERVER')
 SMTP_PORT = int(os.getenv('SMTP_PORT'))
 SMTP_USERNAME = os.getenv('SMTP_USERNAME')
