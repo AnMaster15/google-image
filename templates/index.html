@@ -145,8 +145,7 @@
                     send_as_zip: sendAsZip
                 });
                 result.innerHTML = response.data.message;
-                
-                // Preview images
+            
                 response.data.image_urls.forEach(url => {
                     const img = document.createElement('img');
                     img.src = url;
